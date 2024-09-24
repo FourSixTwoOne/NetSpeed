@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">网速显示</string>
+    <string name="close_win">关</string>
+    <string name="show_FloatWindow">显示网速</string>
+    <string name="reset">重置悬浮窗</string>
+    <string name="net_pos">网速位置固定</string>
+    <string name="open_win">开</string>
+    <string name="size_win">大小</string>
+    <string name="win_color">颜色(黑-红-蓝-绿-白)</string>
+    <string name="text_transparency">透明度</string>
+    <string name="win_setting">悬浮窗设置</string>
+    <string name="display_area">悬浮窗显示要求</string>
+    <string name="bg_color">背景颜色(为零时透明)</string>
+    <string name="display_totalNetSpeed">总网速</string>
+    <string name="doubleNetSpeed">双行网速</string>
+    <string name="memoryUsage">内存占用率</string>
+    <string name="display_doubleNetSpeed">双行网速</string>
+    <string name="Considerations">权限需求（非必须）：</string>
+    <string name="need1">在其它应用上显示；</string>
+    <string name="need2">保持在后台运行；</string>
+    <string name="need3">开机自启动；</string>
+    <string name="KB">KB</string>
+    <string name="MB">MB</string>
+</resources>

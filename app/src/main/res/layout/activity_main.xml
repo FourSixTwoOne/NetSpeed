@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical">
+
+    <!-- 显示网速悬浮窗 -->
+    <LinearLayout
+        android:id="@+id/layout_netSpeed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="15dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="10dp">
+
+        <TextView
+            android:id="@+id/tv_netSpeedText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/show_FloatWindow"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/col_height"
+            android:layout_weight="1" />
+        <!-- 切换按钮 -->
+        <ToggleButton
+            android:id="@+id/toggle_networkSpeed"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:background="@drawable/button_bg"
+            android:gravity="center_vertical|end"
+            android:paddingHorizontal="@dimen/button_padding"
+            android:text="@string/open_win"
+            android:textColor="@color/button_off"
+            android:textOff="@string/close_win"
+            android:textOn="@string/open_win"
+            android:textSize="12sp"
+            tools:ignore="DuplicateSpeakableTextCheck,RtlSymmetry,TouchTargetSizeCheck" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_Total"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_netSpeed"
+        android:background="#000000"
+        android:orientation="vertical">
+
+
+        <!-- 固定网速位置 -->
+        <LinearLayout
+            android:id="@+id/layout_netPos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="10dp">
+
+            <TextView
+                android:id="@+id/tv_netPosText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/net_pos"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                tools:ignore="TextContrastCheck" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/col_height"
+                android:layout_weight="1" />
+
+            <!-- 切换按钮 -->
+            <ToggleButton
+                android:id="@+id/toggle_netStand"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:background="@drawable/button_bg"
+                android:gravity="center_vertical|end"
+                android:paddingHorizontal="@dimen/button_padding"
+                android:text="@string/open_win"
+                android:textColor="@color/button_off"
+                android:textOff="@string/close_win"
+                android:textOn="@string/open_win"
+                android:textSize="12sp"
+                tools:ignore="DuplicateSpeakableTextCheck,RtlSymmetry,TouchTargetSizeCheck,TextContrastCheck" />
+        </LinearLayout>
+
+        <!-- 开启小窗 -->
+        <LinearLayout
+            android:id="@+id/layout_floatingWindow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp">
+
+            <TextView
+                android:id="@+id/tv_floatingWindowText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reset"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                tools:ignore="TextContrastCheck" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/col_height"
+                android:layout_weight="1" />
+
+            <!-- 切换按钮 -->
+            <ToggleButton
+                android:id="@+id/toggle_reset"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:background="@drawable/button_bg"
+                android:gravity="center_vertical|end"
+                android:paddingHorizontal="@dimen/button_padding"
+                android:text="@string/open_win"
+                android:textColor="@color/button_off"
+                android:textOff="@string/close_win"
+                android:textOn="@string/open_win"
+                android:textSize="12sp"
+                tools:ignore="DuplicateSpeakableTextCheck,RtlSymmetry,TouchTargetSizeCheck,TextContrastCheck" />
+        </LinearLayout>
+
+        <!-- 悬浮窗设置 -->
+        <LinearLayout
+            android:id="@+id/layout_windowSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_windowSettingsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:text="@string/win_setting"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                tools:ignore="TextContrastCheck" />
+
+            <!-- 使用 GridLayout 来实现每两列一行的效果 -->
+            <GridLayout
+                android:id="@+id/grid_windowSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:columnCount="2"
+                android:rowCount="2">
+
+                <!-- 大小设置 -->
+                <LinearLayout
+                    android:id="@+id/layout_sizeWin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    android:background="@color/light_blue"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_sizeWin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:text="@string/size_win"
+                        android:textColor="#000000"
+                        tools:ignore="TextContrastCheck" />
+
+                    <SeekBar
+                        android:id="@+id/seekBar_size"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@color/red" />
+                </LinearLayout>
+
+                <!-- 颜色设置 -->
+                <LinearLayout
+                    android:id="@+id/layout_winColor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    android:background="@color/light_blue"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_winColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:text="@string/win_color"
+                        android:textColor="#000000"
+                        android:textSize="12sp"
+                        tools:ignore="TextContrastCheck" />
+
+                    <SeekBar
+                        android:id="@+id/seekBar_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@color/red" />
+                </LinearLayout>
+
+                <!-- 背景透明度 -->
+                <LinearLayout
+                    android:id="@+id/layout_winTransparency"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    android:background="@color/light_blue"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_winTransparency"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:text="@string/text_transparency"
+                        android:textColor="#000000"
+                        android:textSize="12sp"
+                        tools:ignore="TextContrastCheck" />
+
+                    <SeekBar
+                        android:id="@+id/seekBar_opacity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@color/red" />
+                </LinearLayout>
+
+                <!-- 背景大小 -->
+                <LinearLayout
+                    android:id="@+id/layout_backgroundSize"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    android:background="@color/light_blue"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_backgroundOpacity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:text="@string/bg_color"
+                        android:textColor="#000000"
+                        android:textSize="12sp"
+                        tools:ignore="TextContrastCheck" />
+
+                    <SeekBar
+                        android:id="@+id/seekBar_backgroundColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@color/red" />
+                </LinearLayout>
+            </GridLayout>
+        </LinearLayout>
+
+        <!--显示项设置-->
+        <RelativeLayout
+            android:id="@+id/layout_displayArea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="15dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <!--区域标题-->
+            <TextView
+                android:id="@+id/tv_displayArea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:text="@string/display_area"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                tools:ignore="TextContrastCheck" />
+
+            <!--提示-->
+            <LinearLayout
+                android:id="@+id/showNeed"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_displayArea"
+                android:background="@color/light_blue"
+                android:orientation="vertical"
+                android:paddingHorizontal="10dp"
+                tools:ignore="TextSizeCheck">
+
+                <TextView
+                    android:id="@+id/tv_need"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Considerations"
+                    android:textSize="12sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tv_need1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/need1"
+                    android:textSize="12sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tv_need2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/need2"
+                    android:textSize="12sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tv_need3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/need3"
+                    android:textSize="12sp"
+                    tools:ignore="TextContrastCheck" />
+
+            </LinearLayout>
+
+            <!--显示总网速-->
+            <LinearLayout
+                android:id="@+id/layout_totalNetSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/showNeed"
+                android:layout_marginStart="40dp"
+                android:layout_toEndOf="@+id/showNeed"
+                android:background="@color/light_blue"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView_totalNetSpeed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="10dp"
+                    android:text="@string/display_totalNetSpeed"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <Switch
+                    android:id="@+id/switch_totalNetSpeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+            </LinearLayout>
+
+            <!--显示双行网速-->
+            <LinearLayout
+                android:id="@+id/layout_doubleNetSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_totalNetSpeed"
+                android:layout_marginStart="40dp"
+                android:layout_toEndOf="@+id/showNeed"
+                android:background="@color/light_blue"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView_doubleNetSpeed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="10dp"
+                    android:text="@string/display_doubleNetSpeed"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <Switch
+                    android:id="@+id/switch_doubleNetSpeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+            </LinearLayout>
+
+            <!--显示memory占用率-->
+            <LinearLayout
+                android:id="@+id/layout_memoryUsage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_doubleNetSpeed"
+                android:layout_marginStart="40dp"
+                android:layout_toEndOf="@+id/showNeed"
+                android:background="@color/light_blue"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_memoryUsage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="10dp"
+                    android:text="@string/memoryUsage"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <Switch
+                    android:id="@+id/switch_memoryUsage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- 设置一个半透明的视图将覆盖全部区域 -->
+    <View
+        android:id="@+id/view_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_netSpeed"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#ADD0F0F0"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="visible"
+        tools:ignore="SpeakableTextPresentCheck" />
+</RelativeLayout>
