@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="col_height">35dp</dimen>
+    <dimen name="button_width">60dp</dimen>
+    <dimen name="button_height">30dp</dimen>
+    <dimen name="button_padding">15dp</dimen>
+    <dimen name="layout_buttonGravity">1</dimen>
+    <dimen name="layout_Margin">30dp</dimen>
+</resources>
